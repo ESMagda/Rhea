@@ -1,0 +1,1176 @@
+@import "_vars.scss";
+@import "_fonts.scss";
+@import "_libs.scss";
+@import "_media.scss";
+
+body {
+   font-size: 22px;
+   position: relative;
+   @include NunitosansRegular;
+   color: $accent;
+   margin: 0;
+   @include media ("<phone") {
+      font-size: 18px;
+   }
+}
+
+a {
+   text-decoration: none;
+}
+
+p {
+   margin: 0;
+}
+
+ul {
+   padding: 0;
+   margin: 0;
+}
+
+li {
+   list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   margin: 0;
+}
+
+.section_content {
+   max-width: 1600px;
+   margin: 0 auto;
+   padding: 0 160px;
+   z-index: 10;
+   position: relative;
+   @include media ("<desktop") {
+      padding: 0 80px;
+   }
+   @include media ("<tablet") {
+      padding: 0 60px;
+   }
+   @include media ("<phone") {
+      padding: 0 20px;
+   }
+}
+
+.section_title {
+   width: 100%;
+   text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   margin-bottom: 110px;
+   @include media ("<tablet") {
+      margin-bottom: 40px;
+   }
+   @include media ("<phone") {
+      padding: 0 20px;
+      box-sizing: border-box;
+   }
+   &-categories {
+      @include media ("<tablet") {
+         padding-top: 150px;
+      }
+      @include media ("<phone") {
+         padding-top: 110px;
+      }
+   }
+}
+
+section {
+   margin-bottom: 240px;
+   @include media ("<ldesktop") {
+      margin-bottom: 140px;
+   }
+   @include media ("<tablet") {
+      margin-bottom: 80px;
+   }
+   @include media ("<phone") {
+      margin-bottom: 30px;
+   }
+}
+
+// Button
+
+.button {
+   color: #fff;
+   background-color: #3984f3;
+   font-size: 20px;
+   line-height: 35px;
+   letter-spacing: 0.22px;
+   width: 200px;
+   height: 65px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   opacity: 1;
+   transition: opacity .5s ease;
+   &:hover {
+      opacity: .8;
+      transition: opacity .5s ease;
+   }
+   @include media ("<tablet") {
+      width: 150px;
+      height: 55px;
+      font-size: 18px;
+      line-height: 30px;
+   }
+}
+
+// title
+.h2_title {
+   position: relative;
+   @include NunitosansSemiBold;
+   font-size: 50px;
+   line-height: 62px;
+   letter-spacing: 0.02em;
+   color: #091e40;
+   margin-bottom: 110px;
+   &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -40px;
+      width: 78px;
+      height: 6px;
+      background: #3984f3;
+      transform: translate(-50%, 0);
+      @include media ("<phone") {
+         width: 60px;
+      }
+   }
+   @include media ("<tablet") {
+      margin-bottom: 70px;
+   }
+   @include media ("<phone") {
+      font-size: 25px;
+      line-height: 30px;
+   }
+}
+
+
+// Header
+
+.header {
+   width: 100%;
+   padding-top: 70px;
+   @include media ("<tablet") {
+      padding-top: 10px;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 111111;
+      background-color: #fff;
+   }
+}
+
+div.activeMenu {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.top_line {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+   position: relative;
+   &_logo {
+      width: 180px;
+      img {
+         width: 180px;
+         height: 50px;
+      }
+   }
+   &_menu {
+      width: 75%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      ul {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         flex-direction: row;
+      }
+      @include media ("<tablet") {
+         opacity: 0;
+         height: auto;
+         max-height: 1000px;
+         pointer-events: none;
+         overflow: hidden;
+         position: fixed;
+         z-index: 10000;
+         top: 60px;
+         left: 0;
+         width: 100%;
+         background-color: rgba(#ddeafd, 1); 
+         transition: all .5s ease;
+         ul {
+            flex-direction: column;
+            li {
+               margin: 15px 0 15px 60px;
+               @include media ("<tablet") {
+                  margin: 15px 0 15px 20px;
+               }
+            }
+            .li_sign {
+               margin: 15px 0 30px 20px;
+            }
+         }
+      }
+   }
+}
+
+.toggle {
+   background-color: transparent;
+   display: none;
+   position: relative;
+   overflow: hidden;
+   margin: 0;
+   padding: 0;
+   width: 80px;
+   height: 55px;
+   box-shadow: none;
+   border: none;
+   cursor: pointer;
+   opacity: 1;
+   transition: opacity .3s linear;
+   z-index: 100;
+   @include media ("<tablet") {
+      display: block;
+      position: fixed;
+      right: 0;
+      top: 10px;
+      z-index: 100;
+   }
+   &:hover {
+      opacity: .5;
+      transition: opacity .3s linear;
+   }
+   &:focus {
+      outline: none;
+   }
+   span {
+      display: block;
+      position: absolute;
+      top: 25px;
+      left: 18px;
+      right: 18px;
+      height: 4px;
+      background-color:#3984f3;
+      &:before {
+         top: -15px;
+      }
+      &:after {
+         bottom: -15px;
+      }
+      &:before, &:after {
+         position: absolute;
+         display: block;
+         left: 0;
+         width: 100%;
+         height: 4px;
+         background-color:#3984f3;
+         content: "";
+      }
+   }
+}
+
+.toggle-x {
+   span {
+      transition: 0.5s;
+      &:before {
+         transition: top, transform;
+         transition-duration: 0.5s, 0.5s;
+      }
+      &:after {
+         transition: bottom, transform;
+         transition-duration: 0.5s, 0.5s;
+      }
+   }
+}
+
+.toggle-x.is-active {
+   span {
+      background: none;
+      transition: .1s;
+      &:before {
+         top: 0;
+         transform: rotate(45deg);
+      }
+      &:after {
+         bottom: 0;
+         transform: rotate(-45deg);
+      }
+   }
+}
+
+.nav_btn {
+   font-size: 20px;
+   @include NunitosansRegular;
+   color: #bab8b8;
+   line-height: 15px;
+   letter-spacing: 0.015em;
+   transition: color .5s ease;
+   &:hover {
+      color: #4497f3;
+      transition: color .5s ease;
+   }
+}
+
+.nav_sign {
+   color: #3984f3;
+   padding: 15px 45px;
+   border: 3px solid #3984f3;
+   letter-spacing: 0.01em;
+   opacity: 1;
+   transition: opacity .5s ease;
+   &:hover {
+      opacity: .7;
+      transition: opacity .5s ease;
+   }
+   @include media ("<phone") {
+      padding: 10px 30px;
+   }
+}
+
+// Home
+
+.home {
+   @include media ("<tablet") {
+      padding-top: 60px;
+   }
+   &_body {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 160px;
+      width: calc(100% - 160px);
+      padding-top: 50px;
+      @include media ("<desktop") {
+         width: calc(100% - 80px);
+         margin-left: 80px;
+      }
+      @include media ("<tablet") {
+         width: calc(100% - 60px);
+         margin-left: 60px;
+      }
+      @include media ("<phone") {
+         width: calc(100% - 20px);
+         margin-left: 20px;
+         padding-top: 20px;
+         align-items: center;
+      }
+   }
+   &_title {
+      width: 35%;
+      padding-top: 100px;
+      @include media ("<desktop") {
+         padding-top: 50px;
+      }
+      @include media ("<tablet") {
+         padding-top: 30px;
+      }
+      @include media ("<phone") {
+         padding-top: 0;
+         width: 45%;
+      }
+      .h1_title {
+         font-size: 75px;
+         line-height: 80px;
+         letter-spacing: 3px;
+         color: #091e40;
+         margin-bottom: 75px;
+         @include NunitosansExtraBold;
+         @include media ("<ldesktop") {
+            font-size: 65px;
+            margin-bottom: 60px;
+         }
+         @include media ("<desktop") {
+            font-size: 45px;
+            line-height: 55px;
+         }
+         @include media ("<tablet") {
+            margin-bottom: 30px;
+            font-size: 35px;
+            line-height: 45px;
+         }
+         @include media ("<phone") {
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 20px;
+         }
+      }
+      p {
+         line-height: 35px;
+         letter-spacing: 0.22px;
+         margin-bottom: 100px;
+         @include media ("<ldesktop") {
+            margin-bottom: 60px;
+         }
+         @include media ("<tablet") {
+            margin-bottom: 30px;
+            line-height: 28px;
+         }
+         @include media ("<phone") {
+            line-height: 24px;
+         }
+      }
+   }
+   &_image {
+      width: 55%;
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
+}
+
+.places {
+   &_body {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      @include media ("<tablet") {
+         flex-direction: column;
+      }
+   }
+   &_carousel {
+      width: 60%;
+      margin-left: -10%;
+      position: relative;
+      padding-bottom: 60px;
+      @include media ("<tablet") {
+         width: 100%;
+         margin-left: 0;
+         order: 2;
+      }
+      .owl-stage {
+         padding-top: 50px;
+      }
+      .center {
+         margin-top: -50px;
+         transition: 1s ease;
+      }
+      .owl-item img {
+         width: 100%;
+      }
+      .owl-nav {
+         position: absolute;
+         bottom: 0;
+         left: 220px;
+         @include media ("<tablet") {
+            left: 50%;
+            transform: translate(-50%, 0);
+         }
+         > button {
+            color: #a4a4a4 !important;
+            font-size: 30px !important;
+            outline: none;
+            i {
+               font-size: 40px;
+               transition: .5s ease;
+               padding: 0 10px;
+               &:hover {
+                  color: #3984f3;
+               }
+               @include media ("<phone") {
+                  font-size: 30px;
+               }
+            }
+            &.owl-prev {
+               left: 0;
+            }
+            &.owl-next {
+               left: 50px;
+               padding-left: 50px !important;
+            }
+         }
+      }
+   }
+   &_title {
+      width: 40%;
+      margin: 0 160px 0 140px;
+      @include media ("<ldesktop") {
+         margin: 0 120px 0 100px;
+      }
+      @include media ("<desktop") {
+         margin: 0 80px 0 60px;
+      }
+      @include media ("<tablet") {
+         width: 90%;
+         margin: 0 auto;
+         text-align: center;
+         order: 1;
+         margin-bottom: 20px;
+      }
+      @include media ("<phone") {
+         margin-bottom: 0;
+      }
+      .h2_title-places {
+         margin-bottom: 110px;
+         @include media ("<ldesktop") {
+            margin-bottom: 70px;
+         }
+         @include media ("<desktop") {
+            font-size: 40px;
+            line-height: 50px;
+         }
+         @include media ("<phone") {
+            font-size: 25px;
+            line-height: 30px;
+         }
+         &:after {
+            left: 0;
+            transform: translate(0, 0);
+            @include media ("<tablet") {
+               left: 50%;
+               transform: translate(-50%, 0);
+            }
+         }
+      }
+      p {
+         margin-bottom: 50px;
+         text-align: justify;
+         @include media ("<ldesktop") {
+            margin-bottom: 30px;
+         }
+      }
+   }
+}
+
+.places_item {
+   position: relative;
+   max-width: 370px;
+   img {
+      width: 370px;
+      height: auto;
+      z-index: 3;
+      position: relative;
+   }
+   .item_price {
+      width: 110px;
+      height: 45px;
+      background-color: #3984f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+      line-height: 42px;
+      letter-spacing: 0.22px;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      z-index: 5;
+      @include media ("<desktop") {
+         font-size: 20px;
+         line-height: 36px;
+      }
+      @include media ("<phone") {
+         font-size: 18px;
+         width: 70px;
+         height: 30px;
+      }
+   }
+   .item_describe {
+      font-size: 23px;
+      line-height: 42px;
+      letter-spacing: 0.22px;
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      color: #ffffff;
+      z-index: 5;
+      @include media ("<desktop") {
+         font-size: 18px;
+         line-height: 30px;
+      }
+      @include media ("<phone") {
+         left: 10px;
+         bottom: 10px;
+      }
+   }
+   &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to top, rgba(49, 69, 75, .9) 0%,rgba(49, 69, 75, 0) 51%);
+      z-index: 5;
+   }
+}
+
+
+// Videos
+
+.videos {
+   width: 100%;
+}
+
+.videos_block {
+   position: relative;
+   width: calc(100% - 260px);
+   max-width: 1600px;
+   height: auto;
+   margin: 0 130px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   @include media ("<tablet") {
+      flex-wrap: wrap;
+      margin: 0 40px;
+      width: calc(100% - 80px);
+   }
+}
+
+.main_video {
+   width: calc(100% - 200px);
+   height: auto;
+   video {
+      outline: none;
+      width: 100%;
+      height: 100%;
+   }
+   @include media ("<tablet") {
+      width: 100%;
+   }
+}
+
+.help_video {
+   width: 200px;
+   display: flex;
+   flex-direction: column;
+   overflow-y: scroll;
+   align-items: flex-end;
+   position: absolute;
+   right: 0;
+   top: 4px;
+   height: calc(100% - 4px);
+   a{
+      max-width: 200px;
+      margin: 0 10px 10px 10px;
+      &:last-child {
+         margin-bottom: 0;
+      }
+      img {
+         width: 100%;
+         height: auto;
+      }
+      @include media ("<tablet") {
+         &:last-child {
+            margin-bottom: 10px;
+         }
+      }
+   }
+   @include media ("<tablet") {
+      flex-direction: row;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: 100%;
+      height: auto;
+      bottom: -150px;
+      position: relative;
+      top: 0;
+      a {
+         min-width: 130px;
+         margin: 10px 10px 10px 0;
+      }
+   }
+   @include media ("<phone") {
+      bottom: -110px;
+      a {
+         min-width: 90px;
+      }
+   }
+}
+
+
+// Categories
+
+.categories_carousel {
+   width: 100%;
+   position: relative;
+   .owl-stage {
+      padding-top: 60px;
+   }
+   .center {
+      margin-top: -50px;
+      transition: 1s ease;
+   }
+   .owl-nav {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 30px;
+      .owl-prev {
+         margin-right: 70px;
+         outline: none;
+      }
+      .owl-next {
+         outline: none;
+      }
+   }
+}
+
+.categories_item {
+   width: 475px;
+   height: 490px;
+   background-position: center;
+   background-size: cover;
+   position: relative;
+   @include media ("<ldesktop") {
+      width: 425px;
+      height: 440px;
+   }
+   @include media ("<desktop") {
+      width: 400px;
+      height: 415px;
+   }
+   @include media ("<tablet") {
+      width: 300px;
+      height: 315px;
+   }
+   @include media ("<phone") {
+      width: 220px;
+      height: 235px;
+   }
+   &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to top, rgba(49, 69, 75, .9) 0%,rgba(49, 69, 75, 0) 51%);
+      z-index: 5;
+   }
+   .categories_subscribe {
+      position: absolute;
+      bottom: 35px;
+      left: 35px;
+      font-size: 28px;
+      color: #ffffff;
+      line-height: 45px;
+      z-index: 10;
+      @include media ("<tablet") {
+         font-size: 18px;
+         line-height: 30px;
+         left: 15px;
+         bottom: 15px;
+      }
+   }
+   &--1 {
+      background-image: url(../img/categories/1.jpg);
+   }
+   &--2 {
+      background-image: url(../img/categories/4.jpg);
+   }
+   &--3 {
+      background-image: url(../img/categories/3.jpg);
+   }
+   &--4 {
+      background-image: url(../img/categories/4.jpg);
+   }
+   &--5 {
+      background-image: url(../img/categories/4.jpg);
+   }
+   &--6 {
+      background-image: url(../img/categories/4.jpg);
+   }
+}
+
+// Experiences
+
+.experiences {
+   width: 100%;
+}
+
+.exp_carousel {
+   max-width: 1000px;
+   margin: 0 auto;
+   position: relative;
+   @include media ("<phone") {
+      box-sizing: border-box;
+      padding: 0 20px;
+   }
+   .owl-nav {
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      width: 540px;
+      text-align: center;
+      transform: translate(-50%, 0);
+      display: flex;
+      justify-content: space-between;
+      @include media ("<phone") {
+         width: 290px;
+         bottom: 10%;
+      }
+      .owl-prev {
+         font-size: 40px !important;
+         outline: none;
+         @include media ("<phone") {
+            font-size: 30px !important;
+         }
+      }
+      .owl-next {
+         font-size: 40px !important;
+         outline: none;
+         @include media ("<phone") {
+            font-size: 30px !important;
+         }
+      }
+   }
+   .owl-dots {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      @include media ("<phone") {
+         margin-top: 20px;
+      }
+      .owl-dot {
+         display: inline-block;
+         outline: none;
+         width: 40px;
+         height: 5px;
+         background-color: #d4daf5;
+         margin: 0 10px;
+         transition: .5s ease;
+         &.active {
+            background-color: #3984f3;
+            width: 60px;
+         }
+      }
+   }
+}
+
+.exp_item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &_text {
+      margin-bottom: 85px;
+      @include media ("<tablet") {
+         margin-bottom: 40px;
+      }
+      p {
+         text-align: center;
+      }
+   }
+   &_photo {
+      margin-bottom: 45px;
+      img {
+         width: 270px !important;
+         height: 270px;
+         border-radius: 50%;
+         @include media ("<tablet") {
+            width: 220px !important;
+            height: 220px;
+         }
+         @include media ("<phone") {
+            width: 150px !important;
+            height: 150px;
+         }
+      }
+   }
+   &_name {
+      p {
+         @include NunitosansExtraBold;
+         font-size: 24px;
+         line-height: 45px;
+         color: #2b323a;
+      }
+   }
+   &_prof {
+      p {
+         font-size: 20px;
+         color: #2b323a;
+      }
+   }
+}
+
+// Book
+
+.book {
+   width: 100%;
+   height: 900px;
+   background-image: url(../img/book.jpg);
+   background-size: cover;
+   @include media ("<ldesktop") {
+      height: 800px;
+   }
+   @include media ("<desktop") {
+      height: 700px;
+   }
+   @include media ("<phone") {
+      height: 650px;
+   }
+}
+
+.book_title {
+   text-align: center;
+   padding: 300px 0 0 0;
+   @include media ("<ldesktop") {
+      padding: 200px 0 0 0;
+   }
+   @include media ("<desktop") {
+      padding: 100px 0 0 0;
+   }
+   @include media ("<phone") {
+      padding: 40px 20px 0 20px;
+   }
+   .first_p {
+      @include NunitosansSemiBold;
+      font-size: 38px;
+      line-height: 48px;
+      color: #fff;
+      text-transform: uppercase;
+      opacity: .8;
+      margin-bottom: 10px;
+      @include media ("<phone") {
+         font-size: 28px;
+         line-height: 38px;
+      }
+   }
+   .second_p {
+      @include NunitosansExtraBold;
+      font-size: 60px;
+      line-height: 75px;
+      color: #ffffff;
+      @include media ("<desktop") {
+         font-size: 50px;
+         line-height: 55px;
+      }
+      @include media ("<phone") {
+         font-size: 40px;
+         line-height: 50px;
+      }
+   }
+}
+
+.book_form {
+   margin: 0 auto;
+   max-width: 1560px;
+}
+
+.form {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   box-sizing: border-box;
+   padding: 95px 40px 0 40px;
+   @include media ("<desktop") {
+      flex-direction: column;
+      align-items: center;
+      padding: 45px 40px 0 40px;
+   }
+   @include media ("<phone") {
+      padding: 25px 40px 0 40px;
+   }
+   input, select {
+      outline: none;
+      font-size: 24px;
+      line-height: 46px;
+      max-width: 300px;
+      letter-spacing: 0.01em;
+      width: 100%;
+      height: 70px;
+      background-color: rgba(124, 150, 169, 0.8);
+      border: none;
+      color: #fff;
+      padding: 0 20px;
+      @include media ("<ldesktop") {
+         max-width: 250px;
+      }
+      @include media ("<phone") {
+         max-width: 190px;
+         font-size: 18px;
+      }
+      &::placeholder {
+         color: #ffff;
+         opacity: 1;
+      }
+   }
+   select {
+      max-width: 340px;
+      @include media ("<ldesktop") {
+         max-width: 290px;
+      }
+      @include media ("<phone") {
+         max-width: 230px;
+      }
+   }
+   option {
+      font-size: 14px;
+      width: auto;
+   }
+}
+
+.form_button {
+   height: 70px;
+   width: 300px;
+   @include media ("<desktop") {
+      width: 290px;
+   }
+   @include media ("<phone") {
+      max-width: 230px;
+   }
+}
+
+.destination {
+   margin: 0 25px 0 0 !important;
+   @include media ("<desktop") {
+      margin: 20px 0 !important;
+   }
+}
+
+.form_date {
+   margin: 0 25px 0 25px !important;
+   @include media ("<desktop") {
+      margin: 20px 0 !important;
+   }
+}
+
+
+// Footer 
+.footer {
+   width: 100%;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   @include media ("<phone") {
+      flex-direction: row;
+      padding: 0 20px;
+      box-sizing: border-box;
+      justify-content: space-between;
+      text-align: start;
+      flex-wrap: wrap;
+   }
+}
+
+.footer_menu {
+   max-width: 800px;
+   width: 100%;
+   padding: 75px 0 40px 0;
+   margin: 0 auto;
+   @include media ("<tablet") {
+      padding: 35px 0 20px 0;
+      max-width: 700px;
+   }
+   @include media ("<phone") {
+      padding: 10px 0 10px 0;
+      width: 100%;
+   }
+   ul{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      li {
+         margin: 5px 0;
+         a {
+            transition: .5s ease;
+            &:hover {
+               color: #3984f3;   
+            }
+         }     
+      }
+      @include media ("<phone") {
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+}
+
+.nav_footer{
+   font-size: 18px;
+   color: #2b323a;
+   letter-spacing: 0.025em;
+}
+
+.footer_text {
+   width: 100%;
+   font-size: 15px;
+   color: #2b323a;
+   line-height: 50px;
+   letter-spacing: 0.025em;
+   span {
+      color: #c6c6c6;
+   }
+   @include media ("<phone") {
+      text-align: center;
+      line-height: 25px;
+   }
+}
+
+.footer_social {
+   width: 100%;
+   margin: 25px 0 50px 0;
+   ul {
+      li {
+         display: inline-block;
+         margin: 3px;
+         a {
+            color: #fff;
+            display: block;
+            font-size: 20px;
+            background-color:#3984f3;
+            height: 48px;
+            width: 48px;
+            text-align: center;
+            line-height: 48px;
+            border-radius: 50%;
+            opacity: 1;
+            transition: .5s ease;
+            &:hover {
+               opacity: .8;
+               transition: .5s ease;
+            }
+            @include media ("<phone") {
+               margin: 5px;
+            }
+         }
+      }
+   }
+   @include media ("<phone") {
+      margin: 15px 0 20px 0;
+      text-align: center;
+   }
+}
+
+// Top
+
+.top {
+   position: fixed;
+   bottom: 25px;
+   right: -100px;
+   background-color: #e0e0e0;
+   z-index: 12;
+   border-radius: 10em;
+   color: #3984f3;
+   font-size: 26px;
+   width: 50px;
+   height: 50px;
+   text-align: center;
+   line-height: 50px;
+   cursor: pointer;
+   transition: all .3s ease;
+   opacity: 0.5;
+   &:hover {
+      color: #0e59ca;
+      background-color: #bbb9b9;
+      opacity: 1;
+   }
+   &.active {
+      right: 25px;
+   }
+   @include media ("<tablet") {
+	   &.active {
+		   right: 20px;
+	   }
+   }
+}

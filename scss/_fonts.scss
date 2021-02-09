@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "Nunitosans-Regular";
+    src: url("/fonts/Nunitosans-Regular/Nunitosans-Regular.eot"); 
+    src: url("/fonts/Nunitosans-Regular/Nunitosans-Regular.eot?#iefix") format("embedded-opentype"),
+      url("/fonts/Nunitosans-Regular/Nunitosans-Regular.otf") format("opentype"), 
+      url("/fonts/Nunitosans-Regular/Nunitosans-Regular.ttf") format("truetype"), 
+      url("/fonts/Nunitosans-Regular/Nunitosans-Regular.woff") format("woff"), 
+      url("/fonts/Nunitosans-Regular/Nunitosans-Regular.woff2") format("woff2"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunitosans-ExtraBold";
+    src: url("/fonts/Nunitosans-ExtraBold/Nunitosans-ExtraBold.eot"); 
+    src: url("/fonts/Nunitosans-ExtraBold/Nunitosans-ExtraBold.eot?#iefix") format("embedded-opentype"),
+      url("/fonts/Nunitosans-ExtraBold/Nunitosans-ExtraBold.otf") format("opentype"), 
+      url("/fonts/Nunitosans-ExtraBold/Nunitosans-ExtraBold.ttf") format("truetype"), 
+      url("/fonts/Nunitosans-ExtraBold/Nunitosans-ExtraBold.woff") format("woff"), 
+      url("/fonts/Nunitosans-ExtraBold/Nunitosans-ExtraBold.woff2") format("woff2"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunitosans-SemiBold";
+    src: url("/fonts/Nunitosans-SemiBold/Nunitosans-SemiBold.eot"); 
+    src: url("/fonts/Nunitosans-SemiBold/Nunitosans-SemiBold.eot?#iefix") format("embedded-opentype"),
+      url("/fonts/Nunitosans-SemiBold/Nunitosans-SemiBold.otf") format("opentype"), 
+      url("/fonts/Nunitosans-SemiBold/Nunitosans-SemiBold.ttf") format("truetype"), 
+      url("/fonts/Nunitosans-SemiBold/Nunitosans-SemiBold.woff") format("woff"), 
+      url("/fonts/Nunitosans-SemiBold/Nunitosans-SemiBold.woff2") format("woff2"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin NunitosansRegular {
+    font-family: "Nunitosans-Regular";
+}
+
+@mixin NunitosansExtraBold {
+    font-family: "Nunitosans-ExtraBold";
+}
+
+@mixin NunitosansSemiBold {
+    font-family: "Nunitosans-SemiBold";
+}
